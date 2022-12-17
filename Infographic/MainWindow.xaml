@@ -1,0 +1,685 @@
+﻿<Window x:Class="Infographic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Infographic" Height="900" Width="1600">
+
+    <Window.Resources>
+        <Style TargetType="Image" x:Key="BuildingImage">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Height" Value="0"/>
+            <Setter Property="Width" Value="0"/>
+            <Setter Property="Stretch" Value="Fill"/>
+        </Style>
+        <Style TargetType="Rectangle" x:Key="DiagramRectangle">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Width" Value="150"/>
+        </Style>
+        <Style TargetType="Label" x:Key="HeightLabel">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="CityNameText">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Width" Value="0" />
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="BuildingNameText">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Width" Value="0" />
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/istockphoto-1336841530-640x640.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="720"/>
+        </Grid.RowDefinitions>
+        
+        <Label
+            Content="Топ-6 найвищіх будівель світу"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0,20,0,0"
+            FontSize="40"
+            FontFamily="Arial"
+            FontWeight="Bold"
+            Foreground="White"
+            Grid.Row="0"/>
+
+        <Grid
+            Grid.Row="1"
+            HorizontalAlignment="Center">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+            </Grid.ColumnDefinitions>
+
+            <!--#region SixthBuilding-->
+            <Rectangle
+                x:Name="DiagramRectangle6"
+                Style="{StaticResource DiagramRectangle}"
+                Grid.Column="9">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name ="DiagramRectangleColor11" Color="#DF0000" Offset="0.0" />
+                        <GradientStop x:Name ="DiagramRectangleColor12" Color="#9F0000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="DiagramRectangle6" From="44" To="450" BeginTime="0:0:34" Duration="0:0:4"/>
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor11" To="#DF0000" BeginTime="0:0:4" Duration="0:0:4" />
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor12" To="#5F0000" BeginTime="0:0:4" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            <Image
+                x:Name="BuildingImage6"
+                Style="{StaticResource BuildingImage}"
+                Margin="0,0,0,455"
+                Source="/Images/135px-Burj_Khalifa_building.jpg"
+                Grid.Column="5">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="BuildingImage6" From="0" To="150" BeginTime="0:0:38" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingImage6" From="0" To="150" BeginTime="0:0:38" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Label
+                Style="{StaticResource HeightLabel}"
+                Grid.Column="5">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="0:0:34">
+                                    <SplineThicknessKeyFrame KeyTime="0:0:0" Value="0,0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="0:0:4" Value="0,0,0,203" />
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Content" BeginTime="0:0:34" Duration="0:0:4">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="0м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="100м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.2" Value="200м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.6" Value="300м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.0" Value="400м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.4" Value="500м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.8" Value="600м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.2" Value="700м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.6" Value="800м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4.0" Value="827м" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <TextBlock
+                x:Name="CityNameText6"
+                Style="{StaticResource CityNameText}"
+                Text="(Дубай)"
+                Margin="0,0,0,610"
+                Grid.Column="5">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="CityNameText6" From="0" To="250" BeginTime="0:0:38" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
+                x:Name="BuildingNameText6"
+                Style="{StaticResource BuildingNameText}"
+                Text="Бурдж-Халіфа"
+                Margin="0,0,0,640"
+                Grid.Column="5">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingNameText6" From="0" To="250" BeginTime="0:0:38" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <!--#endregion-->
+            
+            <!--#region FifthBuilding-->
+            <Rectangle
+                x:Name="DiagramRectangle5"
+                Style="{StaticResource DiagramRectangle}"
+                Grid.Column="4">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name ="DiagramRectangleColor9" Color="#DF0000" Offset="0.0" />
+                        <GradientStop x:Name ="DiagramRectangleColor10" Color="#9F0000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="DiagramRectangle5" From="44" To="369" BeginTime="0:0:28" Duration="0:0:4"/>
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor9" To="#DF1F00" BeginTime="0:0:4" Duration="0:0:4" />
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor10" To="#7F0000" BeginTime="0:0:4" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            <Image
+                x:Name="BuildingImage5"
+                Style="{StaticResource BuildingImage}"
+                Margin="0,0,0,374"
+                Source="/Merdeka_118_20211204.jpg"
+                Grid.Column="4">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="BuildingImage5" From="0" To="150" BeginTime="0:0:32" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingImage5" From="0" To="150" BeginTime="0:0:32" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Label
+                Style="{StaticResource HeightLabel}"
+                Grid.Column="4">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="0:0:28">
+                                    <SplineThicknessKeyFrame KeyTime="0:0:0" Value="0,0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="0:0:4" Value="0,0,0,166" />
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Content" BeginTime="0:0:28" Duration="0:0:4">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.0" Value="0м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="100м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.2" Value="200м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.8" Value="300м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.4" Value="400м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.0" Value="500м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.6" Value="600м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4.0" Value="678м" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <TextBlock
+                Name="CityNameText5"
+                Style="{StaticResource CityNameText}"
+                Text="(Куала-Лумпур)"
+                Margin="0,0,0,529"
+                Grid.Column="4">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="CityNameText5" From="0" To="250" BeginTime="0:0:32" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
+                x:Name="BuildingNameText5"
+                Style="{StaticResource BuildingNameText}"
+                Text="Merdeka 118"
+                Margin="0,0,0,559"
+                Grid.Column="4">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingNameText5" From="0" To="250" BeginTime="0:0:32" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <!--#endregion-->
+            
+            <!--#region FourthBuilding-->
+            <Rectangle
+                x:Name="DiagramRectangle4"
+                Style="{StaticResource DiagramRectangle}"
+                Grid.Column="3">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name ="DiagramRectangleColor7" Color="#DF0000" Offset="0.0" />
+                        <GradientStop x:Name ="DiagramRectangleColor8" Color="#9F0000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="DiagramRectangle4" From="44" To="343" BeginTime="0:0:22" Duration="0:0:4"/>
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor7" To="#DF3F00" BeginTime="0:0:4" Duration="0:0:4" />
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor8" To="#9F0000" BeginTime="0:0:4" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            <Image
+                x:Name="BuildingImage4"
+                Style="{StaticResource BuildingImage}"
+                Margin="0,0,0,348"
+                Source="/135px-Shanghai_Tower_July_2014_-_1.jpg"
+                Grid.Column="3">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="BuildingImage4" From="0" To="150" BeginTime="0:0:26" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingImage4" From="0" To="150" BeginTime="0:0:26" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Label
+                Style="{StaticResource HeightLabel}"
+                Grid.Column="3">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="0:0:22">
+                                    <SplineThicknessKeyFrame KeyTime="0:0:0" Value="0,0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="0:0:4" Value="0,0,0,149" />
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Content" BeginTime="0:0:22" Duration="0:0:4">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.0" Value="0м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="100м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.2" Value="200м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.8" Value="300м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.4" Value="400м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.0" Value="500м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.6" Value="600м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4.0" Value="632м" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <TextBlock
+                x:Name="CityNameText4"
+                Style="{StaticResource CityNameText}"
+                Text="(Шанхай)"
+                Margin="0,0,0,503"
+                Grid.Column="3">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="CityNameText4" From="0" To="250" BeginTime="0:0:26" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
+                x:Name="BuildingNameText4"
+                Style="{StaticResource BuildingNameText}"
+                Text="Шанхайська башта"
+                Margin="0,0,0,533"
+                Grid.Column="3">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingNameText4" From="0" To="250" BeginTime="0:0:26" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <!--#endregion-->
+            
+            <!--#region ThirdBuilding-->
+            <Rectangle
+                x:Name="DiagramRectangle3"
+                Style="{StaticResource DiagramRectangle}"
+                Grid.Column="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name ="DiagramRectangleColor5" Color="#DF0000" Offset="0.0" />
+                        <GradientStop x:Name ="DiagramRectangleColor6" Color="#9F0000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="DiagramRectangle3" From="44" To="327" BeginTime="0:0:16" Duration="0:0:4"/>
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor5" To="#DF5F00" BeginTime="0:0:4" Duration="0:0:4" />
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor6" To="#9F1F00" BeginTime="0:0:4" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            <Image
+                x:Name="BuildingImage3"
+                Style="{StaticResource BuildingImage}"
+                Margin="0,0,0,332"
+                Source="/Makkah_Royal_Clock_Tower_in_2012.jpg"
+                Grid.Column="2">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="BuildingImage3" From="0" To="150" BeginTime="0:0:20" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingImage3" From="0" To="150" BeginTime="0:0:20" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Label
+                Style="{StaticResource HeightLabel}"
+                Grid.Column="2">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="0:0:16">
+                                    <SplineThicknessKeyFrame KeyTime="0:0:0" Value="0,0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="0:0:4" Value="0,0,0,141" />
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Content" BeginTime="0:0:16" Duration="0:0:4">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.0" Value="0м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.66" Value="100м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.33" Value="200м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.0" Value="300м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.66" Value="400м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.33" Value="500м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4.0" Value="601м" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <TextBlock
+                x:Name="CityNameText3"
+                Style="{StaticResource CityNameText}"
+                Text="(Мекка)"
+                Margin="0,0,0,487"
+                Grid.Column="2">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="CityNameText3" From="0" To="250" BeginTime="0:0:20" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
+                x:Name="BuildingNameText3"
+                Style="{StaticResource BuildingNameText}"
+                Text="Абрадж аль-Бейт"
+                Margin="0,0,0,517"
+                Grid.Column="2">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingNameText3" From="0" To="250" BeginTime="0:0:20" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <!--#endregion-->
+
+            <!--#region SecondBuilding-->
+            <Rectangle
+                x:Name="DiagramRectangle2"
+                Style="{StaticResource DiagramRectangle}"
+                Grid.Column="1">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name ="DiagramRectangleColor3" Color="#DF0000" Offset="0.0" />
+                        <GradientStop x:Name ="DiagramRectangleColor4" Color="#9F0000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="DiagramRectangle2" From="44" To="326" BeginTime="0:0:10" Duration="0:0:4"/>
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor3" To="#DF7F00" BeginTime="0:0:4" Duration="0:0:4" />
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor4" To="#9F3F00" BeginTime="0:0:4" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            <Image
+                x:Name="BuildingImage2"
+                Style="{StaticResource BuildingImage}"
+                Margin="0,0,0,331"
+                Source="/284px-平安金融中心_2019-12-23.jpg"
+                Grid.Column="1">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="BuildingImage2" From="0" To="150" BeginTime="0:0:14" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingImage2" From="0" To="150" BeginTime="0:0:14" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Label
+                Style="{StaticResource HeightLabel}"
+                Grid.Column="1">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="0:0:10">
+                                    <SplineThicknessKeyFrame KeyTime="0:0:0" Value="0,0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="0:0:4" Value="0,0,0,141" />
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Content" BeginTime="0:0:10" Duration="0:0:4">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.0" Value="0м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.66" Value="100м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.33" Value="200м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.0" Value="300м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.66" Value="400м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.33" Value="500м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4.0" Value="599м" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <TextBlock
+                x:Name="CityNameText2"
+                Style="{StaticResource CityNameText}"
+                Text="(Шеньчжень)"
+                Margin="0,0,0,486"
+                Grid.Column="1">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="CityNameText2" From="0" To="250" BeginTime="0:0:14" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
+                x:Name="BuildingNameText2"
+                Style="{StaticResource BuildingNameText}"
+                Text="Міжнародний фінансовий&#10; центр Pina An"
+                Margin="0,0,0,516"
+                Grid.Column="1">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingNameText2" From="0" To="250" BeginTime="0:0:14" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <!--#endregion-->
+            
+            <!--#region FirstBuidling-->
+            <Rectangle
+                x:Name="DiagramRectangle1"
+                Style="{StaticResource DiagramRectangle}"
+                Grid.Column="0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name ="DiagramRectangleColor1" Color="#DF0000" Offset="0.0" />
+                        <GradientStop x:Name ="DiagramRectangleColor2" Color="#9F0000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="DiagramRectangle1" From="44" To="301" BeginTime="0:0:4" Duration="0:0:4"/>
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor1" To="#DF9F00" BeginTime="0:0:4" Duration="0:0:4" />
+                                <ColorAnimation  Storyboard.TargetProperty="Color" Storyboard.TargetName="DiagramRectangleColor2" To="#9F5F00" BeginTime="0:0:4" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            <Image
+                x:Name="BuildingImage1"
+                Style="{StaticResource BuildingImage}"
+                Margin="0,0,0,306"
+                Source="/Lotte_World_Tower_near_Cheongdam_Bridge.jpg"
+                Grid.Column="0">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Storyboard.TargetName="BuildingImage1" From="0" To="150" BeginTime="0:0:8" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingImage1" From="0" To="150" BeginTime="0:0:8" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Label
+                x:Name="HeightLabel1"
+                Style="{StaticResource HeightLabel}"
+                Grid.Column="0">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="0:0:4">
+                                    <SplineThicknessKeyFrame KeyTime="0:0:0" Value="0,0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="0:0:4" Value="0,0,0,128" />
+                                </ThicknessAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Content" BeginTime="0:0:4" Duration="0:0:4">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.0" Value="0м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="100м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="200м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.1" Value="300м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.8" Value="400м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:3.5" Value="500м" />
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4.0" Value="554м" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+            <TextBlock
+                x:Name="CityNameText1"
+                Style="{StaticResource CityNameText}"
+                Text="(Сеул)"
+                Margin="0,0,0,461"
+                Grid.Column="0">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="CityNameText1" From="0" To="250" BeginTime="0:0:8" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
+                x:Name="BuildingNameText1"
+                Style="{StaticResource BuildingNameText}"
+                Text="Башта Lottle World"
+                Margin="0,0,0,491"
+                Grid.Column="0">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="BuildingNameText1" From="0" To="250" BeginTime="0:0:8" Duration="0:0:1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <!--#endregion-->
+            
+        </Grid>
+    </Grid>
+</Window>
