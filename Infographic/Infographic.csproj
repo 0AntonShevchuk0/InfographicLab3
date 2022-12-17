@@ -114,52 +114,7 @@
     <Resource Include="Images\Lotte_World_Tower_near_Cheongdam_Bridge.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Merdeka_118_20211204.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="135px-Shanghai_Tower_July_2014_-_1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Makkah_Royal_Clock_Tower_in_2012.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="284px-平安金融中心_2019-12-23.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Lotte_World_Tower_near_Cheongdam_Bridge.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\images.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\images.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Без названия.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Без названия.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\images %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Без названия %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Без названия %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\istockphoto-1336841530-640x640.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="istockphoto-1336841530-640x640.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
